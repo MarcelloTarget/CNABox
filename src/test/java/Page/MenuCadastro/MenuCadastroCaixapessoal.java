@@ -1,9 +1,8 @@
 package Page.MenuCadastro;
 
 import qa.cnabox.core.BasePage;
-import static qa.cnabox.core.DriverFactory.getDriver;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 
 
 public class MenuCadastroCaixapessoal extends BasePage {
