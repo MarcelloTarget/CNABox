@@ -5,6 +5,7 @@
 	<groupId>qa.cnabox</groupId>
 	<artifactId>QACNABox</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+  
 
 	<properties>
 		<junit.version>4.12</junit.version>
