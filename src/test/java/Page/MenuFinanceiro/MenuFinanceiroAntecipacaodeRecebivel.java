@@ -2,7 +2,12 @@ package Page.MenuFinanceiro;
 
 import static qa.cnabox.core.DriverFactory.getDriver;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -73,6 +78,35 @@ public class MenuFinanceiroAntecipacaodeRecebivel extends BasePage {
 		Thread.sleep(2000);
 		
 }
+	public void SetSelecionarcontaCreditada (String Operacao) throws InterruptedException{
+		
+		WebElement element = getDriver().findElement(By.id("ContaId"));
+		Select combo = new Select(element);
+		combo.selectByValue(Operacao);
+		Thread.sleep(2000);
+	}
 	
+	public void RolarPaginaPageDown() {
+
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+		} catch (AWTException ex) {
+			throw new WebDriverException("VK_PAGE_DOWN", ex);
+
+		}
+	}
 	
+	public void clicarbotaorodape () throws InterruptedException {
+		Thread.sleep(2000);
+		clicarBotaoBy(By.cssSelector("#content-movimentos .smart-form:nth-of-type(49) .text-right"));
+		Thread.sleep(2000);
+	}
 }
