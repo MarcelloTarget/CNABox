@@ -19,9 +19,9 @@ public class MenuFinanceiroAnecipacaoRecebivelTest  extends BaseTest {
 		page.clicarfiltrar();
 		page.Setclicarnasparcelas();
 		page.SetSelecionarcontaCreditada("1016");
-		page.RolarPaginaPageDown();
+		page.SetoRolar();
 		page.clicarbotaorodape();
 		page.RolarPaginaPageDown();
-		
+		page.Botaosalvar();
 	}
 }

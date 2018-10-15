@@ -7,6 +7,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -105,8 +106,20 @@ public class MenuFinanceiroAntecipacaodeRecebivel extends BasePage {
 	}
 	
 	public void clicarbotaorodape () throws InterruptedException {
-		Thread.sleep(2000);
-		clicarBotaoBy(By.cssSelector("#content-movimentos .smart-form:nth-of-type(49) .text-right"));
-		Thread.sleep(2000);
+		Thread.sleep(3000);
+		clicarBotaoBy(By.cssSelector("#content-movimentos .smart-form:nth-of-type(40) .text-right"));
+		Thread.sleep(3000);
 	}
+	
+	public void SetoRolar() {
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1500)", "");
+	}
+
+	public void Botaosalvar () throws InterruptedException {
+		Thread.sleep(3000);
+		clicarBotaoBy(By.id("btnSave"));
+		Thread.sleep(3000);
+	}
+
 }
