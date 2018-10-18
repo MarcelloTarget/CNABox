@@ -3,6 +3,7 @@ package Page.MenuPedagógico;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -10,12 +11,14 @@ import qa.cnabox.core.BasePage;
 
 public class MenuPedagogicoCadastrarSegundaChamadaPage extends BasePage {
 	
-	public void SetClicarMenu() {
+	public void SetClicarMenu() throws InterruptedException {
 		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(8) .menu-item span"));
+		Thread.sleep(1200);
 	}
 
-	public void SetClicarSubMenu() {
-		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(8) li:nth-of-type(7) span"));
+	public void SetClicarSubMenu() throws InterruptedException {
+		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(8) li:nth-of-type(10) span"));
+		Thread.sleep(1200);
 	}
 
 	public void AguardaCarregarPagina() throws InterruptedException {
@@ -102,5 +105,12 @@ public class MenuPedagogicoCadastrarSegundaChamadaPage extends BasePage {
 		Thread.sleep(3000);
 	}
 	
-	
+	/***
+	 * Executa rolagem da página. Exemplo: RolarPagina("scroll(0,650)");
+	 * 
+	 * @param rolagem
+	 */
+	public void RolarPaginaBaixo() {
+		((JavascriptExecutor) getDriver()).executeScript("scroll(0,300)");
+	}
 }

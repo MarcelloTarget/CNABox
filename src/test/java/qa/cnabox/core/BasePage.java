@@ -355,7 +355,7 @@ public class BasePage {
 	 * @param rolagem
 	 */
 	public void RolarPagina() {
-		((JavascriptExecutor) getDriver()).executeScript("scroll(0,1200)");
+		((JavascriptExecutor) getDriver()).executeScript("scroll(0,1600)");
 	}
 
 	/***
