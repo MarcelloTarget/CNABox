@@ -32,7 +32,7 @@ public class MenuPedagogicoCadastrarSegundaChamadaTeste extends BaseTest {
 		page.SetSala();
 		page.SetProfessor();
 		page.RolarPagina();
-		page.BtnSalvar();
+		//page.BtnSalvar();
 		
 		
 		
