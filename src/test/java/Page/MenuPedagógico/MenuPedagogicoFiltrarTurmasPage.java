@@ -96,5 +96,10 @@ public void SetIdioma(String IdIdioma) throws InterruptedException {
 		Thread.sleep(1000);
 		
 	}
+	
+	public void BtnFiltrar() {
+		
+		clicarBotaoBy(By.cssSelector("#btnFiltrarTurmas"));
+	}
 
 }
