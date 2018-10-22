@@ -78,4 +78,42 @@ public class MenuPedagogicoFiltrarTesteDeNivelPage extends BasePage {
 		comboCurso.selectByValue(IdCurso);
 		Thread.sleep(1000);
 	}
+	
+	public void SetNivel(String IdNivel) throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#NivelId"));
+		Thread.sleep(1000);
+		WebElement Nivel = getDriver().findElement(By.id("#NivelId"));
+		Select comboNivel = new Select(Nivel);
+		comboNivel.selectByValue(IdNivel);
+		Thread.sleep(1000);
+	}
+	
+	public void SetEstagio(String IdEstagio) throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#EstagioId"));
+		Thread.sleep(1000);
+		WebElement Estagio = getDriver().findElement(By.id("#EstagioId"));
+		Select comboEstagio = new Select(Estagio);
+		comboEstagio.selectByValue(IdEstagio);
+		Thread.sleep(1000);
+		
+	}
+	
+	public void SetSituacaoAluno(String IdSituacaoAluno) throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector(".select2-selection__rendered"));
+		Thread.sleep(1000);
+		WebElement SituacaoAluno = getDriver().findElement(By.id(".select2-selection__rendered"));
+		Select comboSituacaoAluno = new Select(SituacaoAluno);
+		comboSituacaoAluno.selectByValue(IdSituacaoAluno);
+		Thread.sleep(1000);
+	}
+	
+	public void BtnFiltrar() throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#btnTesteNivelFilter"));
+		Thread.sleep(2000);
+	}
+	
 }
