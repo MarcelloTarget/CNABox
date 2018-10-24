@@ -3,9 +3,7 @@ package Page.MenuAdministrativo;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+
 
 import qa.cnabox.core.BasePage;
 
@@ -24,6 +22,48 @@ public class MenuAdministrativoConsultaDeResponsaveisPage extends BasePage {
 	public void AguardaCarregarPagina() throws InterruptedException {
 		Thread.sleep(1200);
 		
+	}
+	
+	public void EscreveNomeResponsavel(String NomeResponsavel) throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("[name='NomeResponsavel']"));
+		Thread.sleep(500);
+		escreveTexto(By.cssSelector("[name='NomeResponsavel']"), NomeResponsavel);
+	}
+	
+	public void EscreveNomeAluno(String NomeAluno) throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("[name='NomeAluno']"));
+		Thread.sleep(500);
+		escreveTexto(By.cssSelector("[name='NomeAluno']"), NomeAluno);
+	}
+	
+	public void escreveTel_Cel(String Cel_Tel) throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("[name='TelefoneCelular']"));
+		Thread.sleep(500);
+		escreveTexto(By.cssSelector("[name='TelefoneCelular']"), Cel_Tel);
+	}
+	
+	
+	public void escreveEmail(String Email) throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#order-form [name='Email']"));
+		Thread.sleep(500);
+		escreveTexto(By.cssSelector("#order-form [name='Email']"), Email);
+	}
+	
+	public void EscreveCpfResponsavel(String CPF) throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("[name='CPF_CNPJ']"));
+		Thread.sleep(500);
+		escreveTexto(By.cssSelector("[name='CPF_CNPJ']"), CPF);
+				
+	}
+	
+	public void BtnFiltrar() throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#btnResponsaveisFilter"));
 	}
 	
 
