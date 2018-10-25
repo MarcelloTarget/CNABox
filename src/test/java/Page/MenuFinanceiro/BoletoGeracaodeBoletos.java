@@ -14,11 +14,24 @@ import qa.cnabox.core.BasePage;
 
 public class BoletoGeracaodeBoletos  extends BasePage {
 	
-	public class MenuFinanceiroBoleto extends BasePage {
+	public void clicarmenufinanceiro () throws InterruptedException {
 		
+		Thread.sleep(2000);
+		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(9) .nav-title"));
+		Thread.sleep(2000);
+	}
 		
+	public void clicarmenufinanceiroBoletos () throws InterruptedException {
+		
+		clicarBotaoBy(By.linkText("Boleto"));
+		Thread.sleep(2000);
 	}
 	
+	public void clicarGeraçãodeboletos () throws InterruptedException {
+		
+		clicarBotaoBy(By.linkText("Boleto"));
+		Thread.sleep(2000);
+	}
 	
-
+	public void 
 }
