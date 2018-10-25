@@ -14,6 +14,11 @@ import qa.cnabox.core.BasePage;
 
 public class BoletoGeracaodeBoletos  extends BasePage {
 	
+	public class MenuFinanceiroBoleto extends BasePage {
+		
+		
+	}
+	
 	
 
 }
