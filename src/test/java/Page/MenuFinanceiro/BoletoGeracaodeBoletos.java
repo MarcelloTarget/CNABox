@@ -33,5 +33,5 @@ public class BoletoGeracaodeBoletos  extends BasePage {
 		Thread.sleep(2000);
 	}
 	
-	public void 
+
 }
