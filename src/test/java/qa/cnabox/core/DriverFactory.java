@@ -26,7 +26,7 @@ public class DriverFactory {
 		switch (Propriedades.browser) {
 		
 		case CHROME:
-			//System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
 			driver = new ChromeDriver();
 			break;
 		}

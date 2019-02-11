@@ -2,7 +2,7 @@ package qa.cnabox.core;
 
 import java.io.File;
 import java.io.IOException;
-import org.apache.commons.io.FileUtils;
+//import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -39,11 +39,11 @@ public class BaseTest {
 	@After
 	public void finaliza() throws IOException 
 	{
-		TakesScreenshot ss = (TakesScreenshot) getDriver();
-		File print = ss.getScreenshotAs(OutputType.FILE);
+	//	TakesScreenshot ss = (TakesScreenshot) getDriver();
+	//	File print = ss.getScreenshotAs(OutputType.FILE);
 
-		FileUtils.copyFile(print, new File("target" + File.separator + "screenshot" + File.separator
-				+ testName.getMethodName() +  ".jpg"));
+		//FileUtils.copyFile(print, new File("target" + File.separator + "screenshot" + File.separator
+			//	+ testName.getMethodName() +  ".jpg"));
 
 		
 		}

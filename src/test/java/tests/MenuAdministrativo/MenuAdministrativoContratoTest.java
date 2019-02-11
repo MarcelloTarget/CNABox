@@ -15,7 +15,7 @@ public class MenuAdministrativoContratoTest extends BaseTest {
 		page.SetClicarMenuAdministrativo();
 		page.Tempo(4000);
 		page.SetClicarContratos();
-		page.Tempo(3000);
+		page.Tempo(5000);
 		page.SetFiltrarcontratos();
 		page.Tempo(2000);
 		page.SetPesquisaContratoNome("QA");
