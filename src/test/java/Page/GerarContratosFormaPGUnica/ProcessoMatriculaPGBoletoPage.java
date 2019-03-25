@@ -22,7 +22,7 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 	public void SetClicarMenu() {
 
 		clicarBotaoBy(
-				By.xpath("//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/a[@href='#']/span[.='Comercial']"));
+				By.cssSelector(".nav-left-bar li:nth-of-type(7) .nav-title"));
 	}
 
 	public void SetClicarSubMenu() {

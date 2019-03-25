@@ -20,12 +20,12 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 	public void SetClicarMenu() {
 
 		clicarBotaoBy(
-				By.xpath("//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/a[@href='#']/span[.='Comercial']"));
+				By.xpath("//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[7]/a[@href='#']/span[.='Comercial']"));
 	}
 
 	public void SetClicarSubMenu() {
 		clicarBotaoBy(By.xpath(
-				"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/ul[@class='sub-menu']//span[.='Atendimento']"));
+				"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[7]/ul[@class='sub-menu']//span[.='Atendimento']"));
 	}
 
 	public void AguardaCarregarPagina() throws InterruptedException {
@@ -304,17 +304,27 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 		
 	}
 		
-		public void SetEstagio(String numeromodalidade)throws InterruptedException {
+		public void SetCurso(String numeromodalidade)throws InterruptedException {
 			
-			clicarBotaoBy(By.id("EscolaEstagioId"));
+			clicarBotaoBy(By.id("CursoId"));
 			Thread.sleep(2000);
-			WebElement modalidade = getDriver().findElement(By.id("EscolaEstagioId"));
+			WebElement modalidade = getDriver().findElement(By.id("CursoId"));
 			Select combomodalidade = new Select(modalidade);
 			combomodalidade.selectByValue(numeromodalidade);
 			
 		}
 		
-		public void Setmodalidade(String numeromodalidade)throws InterruptedException {
+		public void SetEstagio(String numeroestagio)throws InterruptedException {
+			
+			clicarBotaoBy(By.id("EscolaEstagioId"));
+			Thread.sleep(2000);
+			WebElement estagio = getDriver().findElement(By.id("EscolaEstagioId"));
+			Select comboestagio = new Select(estagio);
+			comboestagio.selectByValue(numeroestagio);
+			
+		}
+		
+		public void SetModalidade(String numeromodalidade)throws InterruptedException {
 			
 			clicarBotaoBy(By.id("ModalidadeId"));
 			Thread.sleep(2000);
@@ -323,6 +333,8 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 			combomodalidade.selectByValue(numeromodalidade);
 			
 		}
+		
+		
 		
 		
 		public void SetProximoestagio(String numeromodalidade)throws InterruptedException {
@@ -684,5 +696,7 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
  		}
  		
 }
+
+
 
 

@@ -77,13 +77,21 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			///// Passo 3 da matricula///	
 			page.SetProximo3();
 			page.Tempo(3000);
-			//// legenda de estágios = 2078-Basico, 2066-Yong, 2062-Pre-School, 2070-Kids, 2074-TEENS, 2088-Fast///
-			page.SetEstagio("2078");
+			
+			//// legenda de Cuso = 4-Adulto, 6-especialização, 2-infantil, 3-Pré-adolescente, 5-professional, 17- Seniors///
+			
+			page.SetCurso("4");
+			
 			// Legenda de modalidade= 1 Extensivo, 2 intensivo, 3 plus////
-			page.Setmodalidade("1");
+			
+			page.SetEstagio("2078");
+			page.Tempo(2000);
+			page.SetModalidade("1");
 			page.Tempo(2000);
 			page.SetProximoestagio("1");
 			page.Tempo(2000);
+			
+			
 			page.RolarPagina();
 			page.Tempo(2000);
 			page.Setproximopasso();

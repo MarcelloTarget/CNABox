@@ -16,6 +16,7 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 	public void DeveCadastrarNovoProspect() throws InterruptedException {
 		
 		//// Cadastrar Aluno////
+		page.Tempo(4000);
 		page.SetClicarMenu();
 		page.Tempo(4000);
 		page.SetClicarSubMenu();
