@@ -606,7 +606,7 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
  	 		Tempo(2000);
  	 		getDriver().findElement(By.cssSelector("#lancamento-editar #ValorParcela")).click();
  	 		Tempo(2000);
- 	 		getDriver().findElement(By.cssSelector("#lancamento-editar #ValorParcela")).sendKeys("370,26");
+ 	 		getDriver().findElement(By.cssSelector("#lancamento-editar #ValorParcela")).sendKeys("383,71");
  	 		Tempo(2000);
  		}
  		
