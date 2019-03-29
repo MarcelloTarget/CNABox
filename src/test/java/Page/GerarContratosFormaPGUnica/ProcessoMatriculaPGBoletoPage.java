@@ -27,7 +27,7 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 
 	public void SetClicarSubMenu() {
 		clicarBotaoBy(By.xpath(
-				"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/ul[@class='sub-menu']//span[.='Atendimento']"));
+				"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[7]/ul[@class='sub-menu']//a[@href='#/Atendimento']"));
 	}
 
 	public void AguardaCarregarPagina() throws InterruptedException {
