@@ -695,6 +695,23 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
  			Tempo(2000);
  		}
  		
+ 		
+ 		
+ 		public void RolarPaginaPageDown2() {
+
+ 			try {
+ 				Robot robot = new Robot();
+ 				robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+ 				robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+ 				robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+ 				robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+ 			} catch (AWTException ex) {
+ 				throw new WebDriverException("VK_PAGE_DOWN", ex);
+
+ 			}
+ 		}
+ 		
+ 		
 }
 
 

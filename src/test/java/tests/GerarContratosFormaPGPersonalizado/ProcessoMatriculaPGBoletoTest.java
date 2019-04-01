@@ -20,13 +20,19 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.SetClicarCadastrarProspect();
 			page.Tempo(4000);
 			page.SetEscreveNomeAluno();
+			page.Tempo(2000);
 			page.SetEscreveEmail();
+			page.Tempo(2000);
 			page.ClicarCampoAtendimento();
 			page.Tempo(4000);
 			page.ClicarCampoDescrição();
+			page.Tempo(2000);
 			page.SetSexoMasculino();
+			page.Tempo(2000);
 			page.SetDataNascimento(" 14111986 ");
+			page.Tempo(2000);
 			page.SetEstadoCivil("3");
+			page.Tempo(2000);
 			page.RolarPaginaPageDown();
 			page.SetTelefoneFixo(" 11345499472 ");
 			page.SetTelefoneCelular(" 11997499671 ");
@@ -64,24 +70,25 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.Tempo(5000);
 			page.RolarPagina();
 			page.Tempo(4000);
-			page.RolarPaginaPageDown();
-			page.Tempo(4000);
-			page.RolarPaginaPageDown();
+			
+			
+			page.RolarPaginaPageDown2();
 			page.Tempo(4000);
 			page.ClicarProximoPasso1();
 			
 			////// Passo 2 da matricula////
 			page.Tempo(4000);
 			page.RolarPagina();
-			
+			page.Tempo(3000);
+			page.RolarPagina();
 			///// Passo 3 da matricula///	
 			page.SetProximo3();
 			page.Tempo(3000);
 			
 			//// legenda de Cuso = 4-Adulto, 6-especialização, 2-infantil, 3-Pré-adolescente, 5-professional, 17- Seniors///
-			
+			page.Tempo(3000);
 			page.SetCurso("4");
-			
+			page.Tempo(3000);
 			// Legenda de modalidade= 1 Extensivo, 2 intensivo, 3 plus////
 			
 			page.SetEstagio("2078");
