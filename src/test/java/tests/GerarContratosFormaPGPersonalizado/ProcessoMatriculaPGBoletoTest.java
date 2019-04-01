@@ -39,6 +39,7 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.RolarPaginaPageDown();
 			page.Tempo(4000);
 			page.ClicarCampoCep();
+			page.Tempo(2000);
 			page.SetCep("18045520");
 			page.Tempo(4000);
 			page.SetNumeroResidencia("120");

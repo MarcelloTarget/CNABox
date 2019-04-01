@@ -7,9 +7,9 @@ import org.openqa.selenium.JavascriptExecutor;
 public class MenuAdministrativoConsultadeEstoquePage extends BasePage {
 
 
-	public void SetclicarMenuComercial() throws InterruptedException {
+	public void SetclicarMenuADM() throws InterruptedException {
 
-		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(7) .menu-item"));
+		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(8) .nav-title"));
 		Thread.sleep(1000);
 		} 
 	

@@ -15,7 +15,7 @@ public class MenuAdministrativoConsultadeEstoqueTeste extends BaseTest{
 	public void Deveinserirestoque () throws InterruptedException {
 
 		page.Tempo(3000);
-		page.SetclicarMenuComercial();
+		page.SetclicarMenuADM();
 		page.Tempo(2000);
 		page.SetClicarmenuConsultaEstoque();
 		page.Tempo(2000);
