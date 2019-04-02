@@ -9,8 +9,10 @@ import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -100,12 +102,13 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 
 	}
 
-	public void SetSelecionarEstagio(String estagio) throws InterruptedException {
-		clicarBotaoBy(By.cssSelector(".txt-color-white .input-sm"));
-		Thread.sleep(1000);
-
+	public void SetSelecionarEstagio(String estagioId) {
+		getDriver().findElement(By.cssSelector("[name='EstagioInteresseId_1']")).click();
+		WebElement estagio = getDriver().findElement(By.cssSelector("[name='EstagioInteresseId_1']"));
+		Select comboEstagio = new Select(estagio);
+		comboEstagio.selectByValue(estagioId);
 	}
-
+	
 	public void SetSelecionarHorario() {
 		clicarBotaoBy(
 				By.xpath("/html//table[@id='datatable_tabletools']/tbody/tr[1]/td[2]/label[@class='checkbox']/i"));
@@ -417,4 +420,18 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 			Thread.sleep(2000);
 			
 		}
+		
+		//======================================================================
+		
+		// PRESSIONAR TAB / ENTER
+		public void sendTab() {
+			Actions act = new Actions(getDriver());
+			   act.sendKeys(Keys.TAB).build().perform();
+		}
+		
+		public void sendEnter() {
+			Actions act = new Actions(getDriver());
+			   act.sendKeys(Keys.RETURN).build().perform();
+		}
+		//======================================================================		
 }

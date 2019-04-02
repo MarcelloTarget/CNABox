@@ -22,7 +22,7 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 		page.SetClicarSubMenu();
 		page.Tempo(4000);
 		page.SetClicarCadastrarProspect();
-		page.Tempo(4000);
+		page.Tempo(5000);
 		page.SetEscreveNomeAluno();
 		page.SetEscreveEmail();
 		page.ClicarCampoAtendimento();
@@ -34,7 +34,6 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 		page.RolarPaginaPageDown();
 		page.SetTelefoneFixo(" 11345499472 ");
 		page.SetTelefoneCelular(" 11997499671 ");
-		page.RolarPaginaPageDown();
 		page.Tempo(4000);
 		page.ClicarCampoCep();
 		page.SetCep("18045520");
@@ -45,7 +44,8 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 		page.Tempo(4000);
 		page.SetSelecionarIdioma();
 		page.Tempo(4000);
-		page.SetSelecionarEstagio("20");
+		page.RolarPaginaPageDown();
+		page.Tempo(4000);
 		page.SetSelecionarHorario();
 		page.Tempo(4000);
 		page.BuscaCPF();
@@ -60,6 +60,8 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 		page.Tempo(3000);
 		page.SetoRolarCimaSemPageUP();
 		page.Tempo(3000);
+		page.RolarPaginaPageDown();
+		page.Tempo(2000);
 		page.ClicarMatricula();
 		page.Tempo(3000);
 		page.ClicarSalvar();
