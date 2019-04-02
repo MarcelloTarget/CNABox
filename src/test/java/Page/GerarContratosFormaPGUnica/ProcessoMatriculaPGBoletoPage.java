@@ -433,5 +433,30 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 			Actions act = new Actions(getDriver());
 			   act.sendKeys(Keys.RETURN).build().perform();
 		}
+		//======================================================================
+		
+		// SCROLL TELA			
+		public void sendPageUp() throws InterruptedException {
+			Actions act = new Actions(getDriver());
+			   act.sendKeys(Keys.PAGE_UP).build().perform();
+			   wait(1000);
+		}
+		
+		public void sendPageDown() throws InterruptedException {
+			Actions act = new Actions(getDriver());
+			   act.sendKeys(Keys.PAGE_DOWN).build().perform();
+			   wait(1000);
+		}
+				
+		public void scrollPageTop() throws InterruptedException {
+			((JavascriptExecutor) getDriver()).executeScript("scroll(0,0)");
+			wait(1000);
+		}
+		
+		public void scrollPageEnd() throws InterruptedException {
+			((JavascriptExecutor) getDriver()).executeScript("scroll(0,99999)");
+			wait(1000);
+		}
+		
 		//======================================================================		
 }
