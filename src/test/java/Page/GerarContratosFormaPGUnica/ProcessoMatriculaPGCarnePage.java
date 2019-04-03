@@ -8,8 +8,10 @@ import java.awt.event.KeyEvent;
 import qa.cnabox.core.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -300,6 +302,16 @@ public class ProcessoMatriculaPGCarnePage extends BasePage {
 		
 	}
 		
+		public void SetCurso(String numeromodalidade)throws InterruptedException {
+			
+			clicarBotaoBy(By.id("CursoId"));
+			Thread.sleep(2000);
+			WebElement modalidade = getDriver().findElement(By.id("CursoId"));
+			Select combomodalidade = new Select(modalidade);
+			combomodalidade.selectByValue(numeromodalidade);
+			
+		}		
+		
 		public void SetEstagio(String numeromodalidade)throws InterruptedException {
 			
 			clicarBotaoBy(By.id("EscolaEstagioId"));
@@ -416,7 +428,45 @@ public class ProcessoMatriculaPGCarnePage extends BasePage {
 			
 		}
 		
-	
+		//======================================================================
+		
+		// PRESSIONAR TAB / ENTER
+		public void sendTab() {
+			Actions act = new Actions(getDriver());
+			   act.sendKeys(Keys.TAB).build().perform();
+		}
+		
+		public void sendEnter() {
+			Actions act = new Actions(getDriver());
+			   act.sendKeys(Keys.RETURN).build().perform();
+		}
+		//======================================================================
+		
+		// SCROLL TELA			
+		public void sendPageUp() {
+			Actions act = new Actions(getDriver());
+			   act.sendKeys(Keys.PAGE_UP).build().perform();
+		}
+		
+		public void sendPageDown() {
+			Actions act = new Actions(getDriver());
+			   act.sendKeys(Keys.PAGE_DOWN).build().perform();
+		}
+				
+		public void scrollPageTop() {
+			((JavascriptExecutor) getDriver()).executeScript("scroll(0,0)");
+		}
+		
+		public void scrollPageEnd() {
+			((JavascriptExecutor) getDriver()).executeScript("scroll(0,99999)");
+		}
+		
+		//======================================================================		
+		
+	    public void setCPF() {
+	    	String valorCPF = geraCPF().toString();
+	    	getDriver().findElement(By.id("CPF_CNPJ")).sendKeys(valorCPF);
+		}
 		 
 		
 		
