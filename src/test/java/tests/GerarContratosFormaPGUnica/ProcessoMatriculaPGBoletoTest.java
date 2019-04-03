@@ -69,7 +69,7 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 	//////// Passo 1 da matricula////
 		page.Tempo(6000);
 		page.scrollPageEnd();
-		page.Tempo(2000);
+		page.Tempo(3000);
 		page.ClicarProximoPasso1();
 		
 		////// Passo 2 da matricula////
