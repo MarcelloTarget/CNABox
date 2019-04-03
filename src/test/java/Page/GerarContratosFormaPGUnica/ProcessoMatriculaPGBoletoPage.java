@@ -471,8 +471,4 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 	    	getDriver().findElement(By.id("CPF_CNPJ")).sendKeys(valorCPF);
 		}
 	    
-	    public void setCPF2() {
-	    	String valorCPF = geraCPF().toString();
-	    	System.out.println(valorCPF);
-		}
 }
