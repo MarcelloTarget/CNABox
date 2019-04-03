@@ -304,6 +304,16 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 		Thread.sleep(2000);
 		
 	}
+
+		public void SetCurso(String numeromodalidade)throws InterruptedException {
+			
+			clicarBotaoBy(By.id("CursoId"));
+			Thread.sleep(2000);
+			WebElement modalidade = getDriver().findElement(By.id("CursoId"));
+			Select combomodalidade = new Select(modalidade);
+			combomodalidade.selectByValue(numeromodalidade);
+			
+		}
 		
 		public void SetEstagio(String numeromodalidade)throws InterruptedException {
 			
@@ -436,27 +446,33 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 		//======================================================================
 		
 		// SCROLL TELA			
-		public void sendPageUp() throws InterruptedException {
+		public void sendPageUp() {
 			Actions act = new Actions(getDriver());
 			   act.sendKeys(Keys.PAGE_UP).build().perform();
-			   wait(1000);
 		}
 		
-		public void sendPageDown() throws InterruptedException {
+		public void sendPageDown() {
 			Actions act = new Actions(getDriver());
 			   act.sendKeys(Keys.PAGE_DOWN).build().perform();
-			   wait(1000);
 		}
 				
-		public void scrollPageTop() throws InterruptedException {
+		public void scrollPageTop() {
 			((JavascriptExecutor) getDriver()).executeScript("scroll(0,0)");
-			wait(1000);
 		}
 		
-		public void scrollPageEnd() throws InterruptedException {
+		public void scrollPageEnd() {
 			((JavascriptExecutor) getDriver()).executeScript("scroll(0,99999)");
-			wait(1000);
 		}
 		
 		//======================================================================		
+		
+	    public void setCPF() {
+	    	String valorCPF = geraCPF().toString();
+	    	getDriver().findElement(By.id("CPF_CNPJ")).sendKeys(valorCPF);
+		}
+	    
+	    public void setCPF2() {
+	    	String valorCPF = geraCPF().toString();
+	    	System.out.println(valorCPF);
+		}
 }

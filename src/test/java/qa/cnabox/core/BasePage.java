@@ -12,107 +12,111 @@ public class BasePage {
 	
 	
 	
-	private int randomiza(int n) {
-		int ranNum = (int) (Math.random() * n);
-		return ranNum;
-	}
+	// GERADOR CPF	
+	private static String calcDigVerif(String num) {  
+        Integer primDig, segDig;  
+        int soma = 0, peso = 10;  
+        for (int i = 0; i < num.length(); i++)  
+                soma += Integer.parseInt(num.substring(i, i + 1)) * peso--;  
+        if (soma % 11 == 0 | soma % 11 == 1)  
+            primDig = new Integer(0);  
+        else  
+            primDig = new Integer(11 - (soma % 11));  
+        soma = 0;  
+        peso = 11;  
+        for (int i = 0; i < num.length(); i++)  
+                soma += Integer.parseInt(num.substring(i, i + 1)) * peso--;  
+        soma += primDig.intValue() * 2;  
+        if (soma % 11 == 0 | soma % 11 == 1)  
+            segDig = new Integer(0);  
+        else  
+            segDig = new Integer(11 - (soma % 11));  
+        return primDig.toString() + segDig.toString();  
+    }  
+    public static String geraCPF() {  
+        String iniciais = "";  
+        Integer numero;  
+        for (int i = 0; i < 9; i++) {  
+            numero = new Integer((int) (Math.random() * 10));  
+            iniciais += numero.toString();  
+        }  
+        return iniciais + calcDigVerif(iniciais);  
+    }  
+    
 
-	private int mod(int dividendo, int divisor) {
-		return (int) Math.round(dividendo - (Math.floor(dividendo / divisor) * divisor));
-	}
+    // GERADOR CNPJ
+    public String geraCNPJ() throws Exception {
+        int digito1 = 0, digito2 = 0, resto = 0;
+        String  nDigResult;
+        String numerosContatenados;
+        Random numeroAleatorio = new Random();
 
-	/******* CNPJ, CPF, Pessoa, Empresa e E-mail **********/
+        int n1 = numeroAleatorio.nextInt(10);
+        int n2 = numeroAleatorio.nextInt(10);
+        int n3 = numeroAleatorio.nextInt(10);
+        int n4 = numeroAleatorio.nextInt(10);
+        int n5 = numeroAleatorio.nextInt(10);
+        int n6 = numeroAleatorio.nextInt(10);
+        int n7 = numeroAleatorio.nextInt(10);
+        int n8 = numeroAleatorio.nextInt(10);
+        int n9 = numeroAleatorio.nextInt(10);
+        int n10 = numeroAleatorio.nextInt(10); 
+        int n11 = numeroAleatorio.nextInt(10); 
+        int n12 = numeroAleatorio.nextInt(10); 
+        int soma = n12*2 + n11*3 + n10*4 + n9*5 + n8*6 + n7*7 + n6*8 + n5*9 + n4*2 + n3*3 + n2*4 + n1*5;
+        int valor = (soma / 11)*11;
+        digito1 = soma-valor;
+        resto = (digito1 % 11);
+        if(digito1 < 2){
+         digito1 = 0;
+        }
+        else {
+          digito1 = 11-resto;
+        }
+        int soma2 =  digito1*2 + n12*3 + n11*4 + n10*5 + n9*6 + n8*7 + n7*8 + n6*9 + n5*2 + n4*3 + n3*4 + n2*5 + n1*6 ;
+        int valor2 = (soma2 / 11)*11;
+        digito2 = soma2-valor2;
+        resto = (digito2 % 11);
+        if(digito2 < 2){
+         digito2 = 0;
+        }
+        else {
+          digito2 = 11-resto;
+        }
 
-	 /**
-	  * Gera CPF Aleatório com pontos ou sem pontos.
-	  * 
-	  * @param comPontos
-	  * @return
-	  */
-	 public String geracpf(boolean comPontos) {
-	  int n = 9;
-	  int n1 = randomiza(n);
-	  int n2 = randomiza(n);
-	  int n3 = randomiza(n);
-	  int n4 = randomiza(n);
-	  int n5 = randomiza(n);
-	  int n6 = randomiza(n);
-	  int n7 = randomiza(n);
-	  int n8 = randomiza(n);
-	  int n9 = randomiza(n);
-	  int d1 = n9 * 2 + n8 * 3 + n7 * 4 + n6 * 5 + n5 * 6 + n4 * 7 + n3 * 8 + n2 * 9 + n1 * 10;
+        numerosContatenados = String.valueOf(n1) + String.valueOf(n2) +"."+ String.valueOf(n3) + String.valueOf(n4) +
+                              String.valueOf(n5) +"."+ String.valueOf(n6) + String.valueOf(n7) +String.valueOf(n8)+"/"+
+                              String.valueOf(n9) + String.valueOf(n10) + String.valueOf(n11) +
+                              String.valueOf(n12)+"-";
+        nDigResult = String.valueOf(digito1) + String.valueOf(digito2);
+        return numerosContatenados+nDigResult;
+        
+       }
+ 
+	//======================================================================
+    
+    // GERADOR RG
+    
+    public String geraRG() throws Exception{
+        String numerosContatenados;
+        Random numeroAleatorio = new Random();
+        
+        int n1 = numeroAleatorio.nextInt(10);
+        int n2 = numeroAleatorio.nextInt(10);
+        int n3 = numeroAleatorio.nextInt(10);
+        int n4 = numeroAleatorio.nextInt(10);
+        int n5 = numeroAleatorio.nextInt(10);
+        int n6 = numeroAleatorio.nextInt(10);
+        int n7 = numeroAleatorio.nextInt(10);
+        int n8 = numeroAleatorio.nextInt(10);
+        int n9 = numeroAleatorio.nextInt(10);
 
-	  d1 = 11 - (mod(d1, 11));
-
-	  if (d1 >= 10)
-	   d1 = 0;
-
-	  int d2 = d1 * 2 + n9 * 3 + n8 * 4 + n7 * 5 + n6 * 6 + n5 * 7 + n4 * 8 + n3 * 9 + n2 * 10 + n1 + 11;
-
-	  d2 = 11 - (mod(d2, 11));
-
-	  String retorno = null;
-
-	  if (d2 >= 10)
-	   d2 = 0;
-	  retorno = "";
-
-	  if (comPontos)
-	   retorno = "" + n1 + n2 + n3 + '.' + n4 + n5 + n6 + '.' + n7 + n8 + n9 + '-' + d1 + d2;
-	  else
-	   retorno = "" + n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + d1 + d2;
-
-	  return retorno;
-	 }
-
-	 /***
-	  * Gera CNPJ com pontos ou sem Pontos.
-	  * 
-	  * @param comPontos
-	  * @return
-	  */
-	 public String gerarcnpj(boolean comPontos) {
-	  int n = 9;
-	  int n1 = randomiza(n);
-	  int n2 = randomiza(n);
-	  int n3 = randomiza(n);
-	  int n4 = randomiza(n);
-	  int n5 = randomiza(n);
-	  int n6 = randomiza(n);
-	  int n7 = randomiza(n);
-	  int n8 = randomiza(n);
-	  int n9 = 0; // randomiza(n);
-	  int n10 = 0; // randomiza(n);
-	  int n11 = 0; // randomiza(n);
-	  int n12 = 1; // randomiza(n);
-	  int d1 = n12 * 2 + n11 * 3 + n10 * 4 + n9 * 5 + n8 * 6 + n7 * 7 + n6 * 8 + n5 * 9 + n4 * 2 + n3 * 3 + n2 * 4
-	    + n1 * 5;
-
-	  d1 = 11 - (mod(d1, 11));
-
-	  if (d1 >= 10)
-	   d1 = 0;
-
-	  int d2 = d1 * 2 + n12 * 3 + n11 * 4 + n10 * 5 + n9 * 6 + n8 * 7 + n7 * 8 + n6 * 9 + n5 * 2 + n4 * 3 + n3 * 4
-	    + n2 * 5 + n1 * 6;
-
-	  d2 = 11 - (mod(d2, 11));
-
-	  if (d2 >= 10)
-	   d2 = 0;
-
-	  String retorno = null;
-
-	  if (comPontos)
-	   retorno = "" + n1 + n2 + "." + n3 + n4 + n5 + "." + n6 + n7 + n8 + "/" + n9 + n10 + n11 + n12 + "-" + d1
-	     + d2;
-	  
-	  else
-	   retorno = "" + n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + n10 + n11 + n12 + d1 + d2;
-
-	  return retorno;
-	 }
-
+        numerosContatenados = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3)  + String.valueOf(n4) +
+                              String.valueOf(n5) + String.valueOf(n6) + String.valueOf(n7) +String.valueOf(n8)  +
+                              String.valueOf(n9);
+        return numerosContatenados;
+        }
+    //======================================================================
 	 /***
 	 * Gera Nomes e Sobrenomes aleatoriamente.
 	 * 
@@ -124,8 +128,8 @@ public class BasePage {
 				"Tiago", "Gildo", "Alfredo", "Mauricio", "Jurandir", "Paulo", "Juvencio", "Daniel", "Jair", "Juvenal",
 				"Jorge", "Agiliza", "Alessandro", "Alexandre", "Aline", "Paula", "Andressa", "Antonia", "Camila",
 				"Carolina", "Cileia", "Debora", "Edna", "Ellen", "Eveline", "Fabio", "Fernanda", "Gesiele", "Hellen",
-				"Isabela", "Joice", "Joseense", "Beatriz", "Laura", "Maria Luiza", "Júlia","Ana", "Alice", "Sofia", "Eduarda", "Larissa", 
-				"Mariana", "Isabela", "Camila", "Valentina", "Lara", "Letícia", "Miguel", "lucas", "Guilherme" ,"Gabriel", "Enzo", "Arthur", "Rafael", "João", "Gustavo", "Pedro", 
+				"Isabela", "Joice", "Joseense", "Beatriz", "Laura", "Julia","Ana", "Alice", "Sofia", "Eduarda", "Larissa", 
+				"Mariana", "Isabela", "Camila", "Valentina", "Lara", "Tatiana", "Guilherme" , "Ricardo", "Gustavo", "Pedro", 
 				"Matheus", "Bernardo", "Davi", "Henrique", "Heitor" };
 		
 		String[] sobrenomes = { "Afonso", "Balera", "Seco", "Vieira", "Mendes", "Miyahira", "Garcia", "Cunha", "Santos",
@@ -136,7 +140,7 @@ public class BasePage {
 		
 		String[] tag = { "TARGET QA" };
 		StringBuilder nomeAleatorio = new StringBuilder();
-		nomeAleatorio.append(nomes[new Random().nextInt(84)]).append(" ").append(sobrenomes[new Random().nextInt(9)])
+		nomeAleatorio.append(nomes[new Random().nextInt(77)]).append(" ").append(sobrenomes[new Random().nextInt(9)])
 				.append(" de ").append(ultimoNome[new Random().nextInt(9)]).append(" ")
 				.append(tag[new Random().nextInt(1)]).append(" ");
 		return nomeAleatorio.toString();
@@ -174,14 +178,14 @@ public class BasePage {
 				"Tiago", "Gildo", "Alfredo", "Mauricio", "Jurandir", "Paulo", "Juvencio", "Daniel", "Jair", "Juvenal",
 				"Jorge", "Agiliza", "Alessandro", "Alexandre", "Aline", "Ana Paula", "Andressa", "Antonia", "Camila",
 				"Carolina", "Cileia", "Debora", "Edna", "Ellen", "Eveline", "Fabio", "Fernanda", "Gesiele", "Hellen",
-				"Isabela", "Joice", "Joseense","Beatriz", "Laura", "Maria Luiza", "Júlia","Ana", "Alice", "Sofia", "Maria Eduarda", "Larissa", 
-				"Mariana", "Isabela", "Camila", "Valentina", "Lara", "Letícia", "Miguel", "lucas", "Guilherme" ,"Gabriel", "Enzo", "Arthur", "Rafael", "João", "Gustavo", "Pedro", 
-				"Matheus", "Bernardo", "Davi", "Henrique", "Heitor" };
+				"Isabela", "Joice", "Joseense","Beatriz", "Laura", "Maria Luiza", "Júlia","Ana", "Alice", "Sofia",  
+				"Mariana", "Isabela", "Camila", "Valentina", "Lara", "Miguel", "lucas", "Guilherme" ,  	"Matheus", 
+				"Bernardo", "Davi", "Henrique" };
 		String[] arroba = { "@" };
 		String[] tag = { "Gmail","hotmail","outlook" };
 		String[] complemento = { ".com.br" };
 		StringBuilder emailAleatorio = new StringBuilder();
-		emailAleatorio.append(nomes[new Random().nextInt(84)]).append(arroba[new Random().nextInt(1)])
+		emailAleatorio.append(nomes[new Random().nextInt(74)]).append(arroba[new Random().nextInt(1)])
 				.append(tag[new Random().nextInt(3)]).append(complemento[new Random().nextInt(1)]);
 		return emailAleatorio.toString();
 	}
@@ -192,7 +196,7 @@ public class BasePage {
 	 * @return
 	 */
 	public String geraEstadoAleatorio() {
-		String[] estados = { "Acre", "Alagoas", "Amapa¡", "Amazonas", "Bahia", "Ceara¡", "Distrito Federal",
+		String[] estados = { "Acre", "Alagoas", "Amapa", "Amazonas", "Bahia", "Ceara", "Distrito Federal",
 				"Espirito Santo", "Goias", "Maranhao", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Parana",
 				"Paraiba", "Para", "Pernambuco", "Piaui", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul",
 				"Rondonia", "Roraima", "Santa Catarina", "Sergipe", "Sao Paulo", "Tocantins" };
@@ -364,7 +368,7 @@ public class BasePage {
 	 * @return
 	 */
 	public String GerarTituloAleatorio() {
-		String[] Titulo = { "CNA na Escola pÃºblica", "CNA Go", "Don't Bee Loro", " CNA Portal Corporativo" };
+		String[] Titulo = { "CNA na Escola Publica", "CNA Go", "Don't Be Loro", " CNA Portal Corporativo" };
 
 		StringBuilder TituloAleatorio = new StringBuilder();
 		TituloAleatorio.append(Titulo[new Random().nextInt(4)]).append(" ");
