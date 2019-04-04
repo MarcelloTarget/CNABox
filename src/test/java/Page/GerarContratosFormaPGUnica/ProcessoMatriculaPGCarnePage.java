@@ -18,7 +18,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProcessoMatriculaPGCarnePage extends BasePage {
 
-
 	public void SetClicarMenu() {
 
 		clicarBotaoBy(

@@ -1,6 +1,5 @@
 package Page.GerarContratosFormaPGUnica;
 
-
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import java.awt.AWTException;
